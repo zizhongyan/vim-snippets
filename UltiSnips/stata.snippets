@@ -7,4 +7,68 @@ snippet use "#Use data ..."
 use "${1:file}.dta" , clear  
 endsnippet
 
+snippet comm-l "#Single Line Comments"
+/* [> ${1:insert} <] */ 
+endsnippet
+ 
+snippet comm-s "#Section Header."
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+/*  Section: ${1:title}  			
+    ${2:Notes:} */
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+${3:Content}	
+
+
+
+*-*-*-*-*-*-*-* End of the Section ${1:title} *-*-*-*-*-*-*-*-*-*-*
+endsnippet
+
+
+snippet comm-t "#To do list"
+
+/*------------------------- 
+	To Do:
+		 1.${1:first}  
+		 2.${2:second}  
+-------------------------*/ 
+endsnippet
+
+snippet fore "#Foreach"
+foreach ${1:k} in ${2:varlist} {
+	$0
+}  // end of foreach ${1:w} in ${2:varlist}
+endsnippet
+
+snippet forv "#Forvalues"
+forvalues ${1:j} = ${2:1} (${3:1}) ${4:n} {
+	$0
+}  // end of forvalues ${1:j} = ${2:1} (${3:1}) ${4:n}
+endsnippet
+
+snippet merge "#Merge"
+merge  ${1:how}  ${2:variables} using "${3:file}.dta"   
+endsnippet
+
+snippet prog "#Program"
+capture program drop ${1:Name}
+program define ${1:Name}
+	$0
+end // end of program ${1:Name}
+endsnippet
+
+snippet save "#Save"
+save "${1:file}.dta" , replace   
+endsnippet
+
+snippet use "#Use"
+use "${1:file}.dta" , clear  
+endsnippet
+
+
+snippet append "#Append"
+append using "${1:file}.dta" 
+endsnippet
+
+
 # vim:ft=snippets:
